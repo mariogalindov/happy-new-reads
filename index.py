@@ -1,6 +1,13 @@
-from flask import Flask
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from flask import Flask, request
+import requests
+from responses import Responses
 
 app = Flask(__name__)
+
+ACCESS_TOKEN = 'EAAEzHJeqzxsBABisf2HpZCD4EdudErzscxGQDHENCEFhJMkCxun8bT00w0BpZCukLDwwZCQGGbcEqp9QAJmaorp93HXb6Tl3HxNlR9wcbQVn37Eu5FM3Oft51gQnD4pZCl69dPD1hNobEcODokyw48subgkD0nFa1Bs4TwV9cgZDZD'
+VERIFY_TOKEN = 'one5udx4'
 
 @app.route("/")
 def index():
@@ -8,39 +15,7 @@ def index():
 
 @app.route('/webhook', methods = ['GET', 'POST'])
 def webhook():
-	if request.method == 'POST':
-		message = request.json
-		print(message)
-
-		for event in message["entry"]:
-			messaging = event["messaging"]
-			for event_message in messaging:
-				sender_id = event_message["sender"]["id"]
-
-				'''	
-					validar si es un mensaje o un payload 
-
-				'''
-				replies = Respuestas()
-
-				message = event_message["message"]["text"]
-				
-				if message == "SALUDO":
-					#BOT SALUDA
-					replies.saluda(sender_id)
-
-				elif message == "HORA":
-					#BOT ALKSDHJKASD
-
-				if payloda == "220":
-					#bot say number page 
-
-		return "ok"
-
-	elif request.method == 'GET':
-		if request.args.get('hub.verify_token') == VERIFY_TOKEN:
-			return request.args.get('hub.challenge')
-		return 'Verificar token'	
+		
 
 if __name__ == "__main__":
 	app.run(debug = True)
