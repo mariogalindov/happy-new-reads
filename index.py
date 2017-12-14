@@ -36,7 +36,6 @@ def webhook():
 				elif "páginas" in texto:
 					num_paginas = texto.split()[0]
 					num_paginas = int(num_paginas)
-					
 					bot.dias(sender_id)
 				elif "días" in texto:
 					num_dias = texto.split()[0]
