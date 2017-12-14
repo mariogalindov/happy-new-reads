@@ -19,13 +19,30 @@ def index():
 @app.route('/webhook', methods = ['GET', 'POST'])
 def webhook():
 	if request.method == 'POST':
+		print("LLEGO PETICION")
 		message = request.json
 		for event in message["entry"]:
 			messaging = event["messaging"]
 			for event_message in messaging:
 				sender_id = event_message["sender"]["id"]
-				if message.upper() ==  "HOLA":
+				texto = event_message["message"]["text"]
+				print(texto)
+				if texto ==  "Hola":
 					bot.saluda(sender_id)
+				elif texto == "Si":
+					bot.book(sender_id)
+				elif texto == "El principito":
+					bot.paginas(sender_id)
+				elif "páginas" in texto:
+					num_paginas = texto.split()[0]
+					num_paginas = int(num_paginas)
+					
+					bot.dias(sender_id)
+				elif "días" in texto:
+					num_dias = texto.split()[0]
+					num_dias = int(num_dias)
+					bot.num_paginas(sender_id)
+
 		return 'ok' #Este siempre se queda porque le responde un 200 a FB
 
 	elif request.method == 'GET':
@@ -33,10 +50,10 @@ def webhook():
 			return request.args.get('hub.challenge')
 		return 'Verificar token'
 
-@app.route('/notificaciones', method = 'POST')
+'''@app.route('/notificaciones', method = 'POST')
 def notif():
-	
-		
 
+	'''
+	
 if __name__ == "__main__":
 	app.run(debug = True)
