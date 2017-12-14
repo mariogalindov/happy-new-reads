@@ -24,7 +24,8 @@ def webhook():
 			messaging = event["messaging"]
 			for event_message in messaging:
 				sender_id = event_message["sender"]["id"]
-		bot.saluda(sender_id)
+				if message.upper() ==  "HOLA":
+					bot.saluda(sender_id)
 		return 'ok' #Este siempre se queda porque le responde un 200 a FB
 
 
