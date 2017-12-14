@@ -27,12 +27,14 @@ def webhook():
 		bot.saluda(sender_id)
 		return 'ok' #Este siempre se queda porque le responde un 200 a FB
 
-
-
 	elif request.method == 'GET':
 		if request.args.get('hub.verify_token') == VERIFY_TOKEN:
 			return request.args.get('hub.challenge')
 		return 'Verificar token'
+
+@app.route('/notificaciones', method = 'POST')
+def notif():
+	
 		
 
 if __name__ == "__main__":
