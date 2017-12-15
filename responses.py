@@ -59,7 +59,7 @@ class Responses():
 									]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAAufIAaTmJQ6WCHJEZAznuK7LyeJUiwM2A48jpGhGnADXTEMRuCIJHfV2wwjEcFWV2lgSLhmpWiYjpstJZAAYv2QjoszkxhEQFOuTh1sClTZC1pZBTHWyNZARknPWepQzbmWgWIrD3UVany3aElflAnjZBjcgPxgZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
 		send=requests.post(URL,json = JSON)
 		return True
 
@@ -74,7 +74,7 @@ class Responses():
 					{
 						"content_type":"text",
 						"title":"Sí :)",
-						"payload":"Sí",
+						"payload":"Si",
 					},
 					{
 						"content_type":"text",
@@ -83,7 +83,7 @@ class Responses():
 					},				]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAAufIAaTmJQ6WCHJEZAznuK7LyeJUiwM2A48jpGhGnADXTEMRuCIJHfV2wwjEcFWV2lgSLhmpWiYjpstJZAAYv2QjoszkxhEQFOuTh1sClTZC1pZBTHWyNZARknPWepQzbmWgWIrD3UVany3aElflAnjZBjcgPxgZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
 		send=requests.post(URL,json = JSON)
 		return True
 
@@ -116,7 +116,7 @@ class Responses():
 									]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAAufIAaTmJQ6WCHJEZAznuK7LyeJUiwM2A48jpGhGnADXTEMRuCIJHfV2wwjEcFWV2lgSLhmpWiYjpstJZAAYv2QjoszkxhEQFOuTh1sClTZC1pZBTHWyNZARknPWepQzbmWgWIrD3UVany3aElflAnjZBjcgPxgZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
 		send=requests.post(URL,json = JSON)
 		return True
 	def tiempo_lectura(self, sender_id):

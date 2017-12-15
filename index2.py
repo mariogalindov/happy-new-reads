@@ -6,7 +6,7 @@ from responses import Responses
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = 'EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD'
+ACCESS_TOKEN = 'EAAKHni1byYIBAMIwWgGd6WIKzFlS5T17QDhWy3WkGYxFGSZCIxAqfxTysWQPdAupQwORmtbrR6s5mfcD5cPfKKadyjL6nTjnXelU9G8ZBvIOibUZB9qjezNZAZAvwcqsHLszT1NXrsMWsZBfxHqMsfIY5eOQop6jcP4qCp4E8GGAZDZD'
 VERIFY_TOKEN = 'one5udx4'
 
 bot = Responses(ACCESS_TOKEN)
@@ -45,9 +45,9 @@ def webhook():
 					num_dias = texto.split()[0]
 					num_dias = int(num_dias)
 					bot.num_paginas(sender_id)
-				elif texto == "4:00pm":
+				elif "4:03pm" in texto:
 					bot.hora(sender_id)
-				elif texto == "Sí":
+				elif "No" in texto:
 					bot.snooze_time(sender_id)
 				elif "Sí :)" in texto:
 					bot.reading_time(sender_id)
