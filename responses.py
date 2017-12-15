@@ -10,7 +10,7 @@ class Responses():
 
 	def saluda(self, sender_id):
 		#crear usuario con el sender_id y guardarlo en el backend 
-		text = "¡Hola! ¿Listo para empezar a leer hoy?"
+		text = "¡Hola! ¿Listo para empezar a leer?"
 		self.bot.send_text_message(sender_id,text)
 	
 	def book(self, sender_id):
@@ -28,9 +28,10 @@ class Responses():
 
 	def num_paginas(self, sender_id):
 		#calculo = ir al backend y preguntar
-		calculo = str(10)
+		calculo = str(35)
 		text = "Muy bien! Debes leer " + calculo + " páginas diarias para cumplir tu objetivo"
 		self.bot.send_text_message(sender_id,text)
+		self.bot.send_text_message(sender_id,"¿A qué hora quieres que te recuerde leer?")
 
 	def reading_time(self,sender_id):
 		JSON = {
@@ -62,6 +63,33 @@ class Responses():
 		send=requests.post(URL,json = JSON)
 		return True
 
+	def hora(self,sender_id):
+		JSON = {
+			"recipient":{
+				"id":sender_id
+						},
+			"message":{
+				"text" : "¿Listo para leer?",
+				"quick_replies" : [
+					{
+						"content_type":"text",
+						"title":"Sí :)",
+						"payload":"Sí",
+					},
+					{
+						"content_type":"text",
+						"title":"No",
+						"payload":"No :(",
+					},				]
+						}
+				}
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAAufIAaTmJQ6WCHJEZAznuK7LyeJUiwM2A48jpGhGnADXTEMRuCIJHfV2wwjEcFWV2lgSLhmpWiYjpstJZAAYv2QjoszkxhEQFOuTh1sClTZC1pZBTHWyNZARknPWepQzbmWgWIrD3UVany3aElflAnjZBjcgPxgZDZD"
+		send=requests.post(URL,json = JSON)
+		return True
+
+
+
+
 	def snooze_time(self,sender_id):
 		JSON = {
 			"recipient":{
@@ -91,4 +119,11 @@ class Responses():
 		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAAufIAaTmJQ6WCHJEZAznuK7LyeJUiwM2A48jpGhGnADXTEMRuCIJHfV2wwjEcFWV2lgSLhmpWiYjpstJZAAYv2QjoszkxhEQFOuTh1sClTZC1pZBTHWyNZARknPWepQzbmWgWIrD3UVany3aElflAnjZBjcgPxgZDZD"
 		send=requests.post(URL,json = JSON)
 		return True
+	def tiempo_lectura(self, sender_id):
+			text = "Bien! :D ¿Cuántas páginas leíste hoy? "
+			self.bot.send_text_message(sender_id,text)
+	def resumen_diario(self, sender_id):
+			text = "Excelente! :D Leíste 15 páginas más que tu objetivo diario"
+			self.bot.send_text_message(sender_id,text)
+			self.bot.send_text_message(sender_id,"Nos vemos mañana! :P")
 

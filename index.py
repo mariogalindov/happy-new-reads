@@ -21,30 +21,41 @@ def webhook():
 	if request.method == 'POST':
 		print("LLEGO PETICION")
 		message = request.json
-		for event in message["entry"]:
+		for event in message["entry"]: #Empieza el parseo
 			messaging = event["messaging"]
 			for event_message in messaging:
 				sender_id = event_message["sender"]["id"]
 				texto = event_message["message"]["text"]
+				#payload  = event_message["message"]["quick_reply"]["payload"]
 				print(texto)
+				print(messaging)
 				if texto ==  "Hola":
 					bot.saluda(sender_id)
 				elif texto == "Si":
 					bot.book(sender_id)
 				elif texto == "El principito":
 					bot.paginas(sender_id)
+				elif texto == "75 páginas":
+					'''
 				elif "páginas" in texto:
 					num_paginas = texto.split()[0]
 					num_paginas = int(num_paginas)
+					'''
 					bot.dias(sender_id)
 				elif "días" in texto:
 					num_dias = texto.split()[0]
 					num_dias = int(num_dias)
 					bot.num_paginas(sender_id)
-				elif "gracias" in texto:
-					bot.reading_time(sender_id)
-				elif "bye" in texto:
+				elif "3:34pm" in texto:
+					bot.hora(sender_id)
+				elif "No" in texto:
 					bot.snooze_time(sender_id)
+				elif "Sí :)" in texto:
+					bot.reading_time(sender_id)
+				elif "1 hora" in texto:
+					bot.tiempo_lectura(sender_id)
+				elif "50 páginas" in texto:
+					bot.resumen_diario(sender_id)
 
 		return 'ok' #Este siempre se queda porque le responde un 200 a FB
 
@@ -55,8 +66,7 @@ def webhook():
 
 '''@app.route('/notificaciones', method = 'POST')
 def notif():
-
-	'''
+'''
 	
 if __name__ == "__main__":
 	app.run(debug = True)
