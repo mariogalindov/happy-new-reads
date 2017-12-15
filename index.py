@@ -41,7 +41,10 @@ def webhook():
 					num_dias = texto.split()[0]
 					num_dias = int(num_dias)
 					bot.num_paginas(sender_id)
-				
+				elif "gracias" in texto:
+					bot.reading_time(sender_id)
+				elif "bye" in texto:
+					bot.snooze_time(sender_id)
 
 		return 'ok' #Este siempre se queda porque le responde un 200 a FB
 
