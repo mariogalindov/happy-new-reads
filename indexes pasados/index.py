@@ -45,7 +45,7 @@ def webhook():
 					num_dias = texto.split()[0]
 					num_dias = int(num_dias)
 					bot.num_paginas(sender_id)
-				elif texto == "4:00pm":
+				elif texto == "5:44pm":
 					bot.hora(sender_id)
 				elif texto == "Sí":
 					bot.snooze_time(sender_id)
