@@ -6,7 +6,7 @@ from responses import Responses
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = 'EAAKHni1byYIBAIailUcuuVrwNLqmsG7VGEK29I5erzE3gC4ZCaITZCwxZAHTqMcePZCg3Y0K8yJe2VXC80ZBNXVZBZASpZCpJrTS3dX78hbWxCbcpwAv3KxBgayN2o0fVmvCfdY6G9g4yiRh4f1jLbSJNbD7EVupxjsllHyh77wit0nQwYLgKiha'
+ACCESS_TOKEN = 'EAAKHni1byYIBAKp0ew5xQpoQdX6S3ZCqf2MHnyzMyE4IDeSW0MyQql51LnEY4NxsF3sLkmQEJtgNEyNBmkq5nusFRJZAxHG9mn7UNYpBaw4FfiV89CYtkSCQEYCAhmHXup9yKfC8dfHWZClZAOoHcZAtoIvlSuKAHVZCP18LwThhTM9Ymazgwa'
 VERIFY_TOKEN = 'one5udx4'
 
 bot = Responses(ACCESS_TOKEN)
@@ -17,10 +17,19 @@ def index():
 	return "Bot iniciado"
 
 @app.route('/webhook', methods = ['GET', 'POST'])
+
+def greeting():
+	if request.method == 'POST':
+		bot.greeting(self)
+
+
+
+
 def webhook():
 	if request.method == 'POST':
 		print("LLEGO PETICION")
 		message = request.json
+		print(message)
 		for event in message["entry"]: #Empieza el parseo
 			messaging = event["messaging"]
 			for event_message in messaging:
