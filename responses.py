@@ -8,6 +8,22 @@ class Responses():
 		bot = Bot(access_token)
 		self.bot = bot
 
+	def greeting(self):
+		JSON = {
+			"greeting":[
+  				{
+				    "locale":"default",
+				    "text":"Hello!"
+				  }, {
+				    "locale":"en_US",
+				    "text":"Timeless apparel for the masses."
+				  }
+					]
+				}
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAIailUcuuVrwNLqmsG7VGEK29I5erzE3gC4ZCaITZCwxZAHTqMcePZCg3Y0K8yJe2VXC80ZBNXVZBZASpZCpJrTS3dX78hbWxCbcpwAv3KxBgayN2o0fVmvCfdY6G9g4yiRh4f1jLbSJNbD7EVupxjsllHyh77wit0nQwYLgKiha"
+		send=requests.post(URL,json = JSON)
+		return True
+
 	def saluda(self, sender_id):
 		#crear usuario con el sender_id y guardarlo en el backend 
 		text = "¡Hola! ¿Listo para empezar a leer?"
@@ -59,7 +75,7 @@ class Responses():
 									]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAIailUcuuVrwNLqmsG7VGEK29I5erzE3gC4ZCaITZCwxZAHTqMcePZCg3Y0K8yJe2VXC80ZBNXVZBZASpZCpJrTS3dX78hbWxCbcpwAv3KxBgayN2o0fVmvCfdY6G9g4yiRh4f1jLbSJNbD7EVupxjsllHyh77wit0nQwYLgKiha"
 		send=requests.post(URL,json = JSON)
 		return True
 
@@ -83,7 +99,7 @@ class Responses():
 					},				]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAIailUcuuVrwNLqmsG7VGEK29I5erzE3gC4ZCaITZCwxZAHTqMcePZCg3Y0K8yJe2VXC80ZBNXVZBZASpZCpJrTS3dX78hbWxCbcpwAv3KxBgayN2o0fVmvCfdY6G9g4yiRh4f1jLbSJNbD7EVupxjsllHyh77wit0nQwYLgKiha"
 		send=requests.post(URL,json = JSON)
 		return True
 
@@ -116,7 +132,7 @@ class Responses():
 									]
 						}
 				}
-		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAEIoQtveXuu2zZCAnpSKGTYtb6OIQ3sbodJeZAfThQuMhpvkyCZBRUWBXgdG0l1EbdZBmQlr41eUDU1QWpAgZAUdrCFdwuDuf7LZCg0ZCh2Naun5YNdIbfdmWdG18ku3c5UeywnUz1iiRmEm9qIJOapAMY4b3AVcwZDZD"
+		URL="https://graph.facebook.com/v2.6/me/messages?access_token=EAAKHni1byYIBAIailUcuuVrwNLqmsG7VGEK29I5erzE3gC4ZCaITZCwxZAHTqMcePZCg3Y0K8yJe2VXC80ZBNXVZBZASpZCpJrTS3dX78hbWxCbcpwAv3KxBgayN2o0fVmvCfdY6G9g4yiRh4f1jLbSJNbD7EVupxjsllHyh77wit0nQwYLgKiha"
 		send=requests.post(URL,json = JSON)
 		return True
 	def tiempo_lectura(self, sender_id):
