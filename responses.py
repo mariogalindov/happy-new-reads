@@ -10,13 +10,18 @@ class Responses():
 
 	def greeting(self):
 		JSON = {
+
+			"get_started":{
+    			"payload":"<GET_STARTED_PAYLOAD>"
+  							}
+  							
 			"greeting":[
   				{
 				    "locale":"default",
-				    "text":"Hello!"
+				    "text":"Hola!"
 				  }, {
-				    "locale":"en_US",
-				    "text":"Timeless apparel for the masses."
+				    "locale":"es_LA",
+				    "text":"El chatbot que te ayudará en tu camino a la lectura."
 				  }
 					]
 				}
