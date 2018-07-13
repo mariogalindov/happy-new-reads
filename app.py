@@ -20,7 +20,7 @@ def index():
 
 def greeting():
 	if request.method =="POST":
-		bot.greeting()
+		bot.greeting(sender_id)
 
 def webhook():
 	if request.method == 'POST':
