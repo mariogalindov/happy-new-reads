@@ -10,11 +10,9 @@ class Responses():
 
 	def greeting(self):
 		JSON = {
-
 			"get_started":{
-    			"payload":"<GET_STARTED_PAYLOAD>"
-  							}
-  							
+    			"payload":"<Hola>"
+  				},				
 			"greeting":[
   				{
 				    "locale":"default",
