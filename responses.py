@@ -8,7 +8,7 @@ class Responses():
 		bot = Bot(access_token)
 		self.bot = bot
 
-	def greeting(self):
+	def greeting(self,sender_id):
 		JSON = {
 			"get_started":{
     			"payload":"<Hola>"

@@ -19,7 +19,8 @@ def index():
 @app.route('/webhook', methods = ['GET', 'POST'])
 
 def greeting():
-	bot.greeting(self)
+	if request.method =="POST":
+		bot.greeting()
 
 def webhook():
 	if request.method == 'POST':
