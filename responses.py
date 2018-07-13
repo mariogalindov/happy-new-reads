@@ -8,14 +8,14 @@ class Responses():
 		bot = Bot(access_token)
 		self.bot = bot
 
-	def greeting(self,sender_id):
+	def greeting(self):
 		JSON = {
 			"get_started":{
     			"payload":"<Hola>"
   				},				
 			"greeting":[
   				{
-				    "locale":"default",
+				    "locale":"es_LA",
 				    "text":"Hola!"
 				  }, {
 				    "locale":"es_LA",
