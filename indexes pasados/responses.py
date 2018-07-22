@@ -8,6 +8,7 @@ class Responses():
 		bot = Bot(access_token)
 		self.bot = bot
 
+
 	def saluda(self, sender_id):
 		#crear usuario con el sender_id y guardarlo en el backend 
 		text = "¡Hola! ¿Listo para empezar a leer?"

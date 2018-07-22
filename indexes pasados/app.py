@@ -19,15 +19,10 @@ def index():
 @app.route('/webhook', methods = ['GET', 'POST'])
 
 
-
-def greeting():
-	bot.greeting()
-
 def webhook():
 	if request.method == 'POST':
 		print("LLEGO PETICION")
 		message = request.json
-		print(message)
 		for event in message["entry"]: #Empieza el parseo
 			messaging = event["messaging"]
 			for event_message in messaging:
