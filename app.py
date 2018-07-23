@@ -32,7 +32,7 @@ def webhook():
 				texto = event_message["message"]["text"]
 				#payload  = event_message["message"]["quick_reply"]["payload"]
 				print(texto)
-				if payload ==  "Hola":
+				if texto ==  "Hola":
 					bot.saluda(sender_id)
 				elif texto == "Si":
 					bot.book(sender_id)
