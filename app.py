@@ -30,9 +30,9 @@ def webhook():
 			for event_message in messaging:
 				sender_id = event_message["sender"]["id"]
 				texto = event_message["message"]["text"]
-				#payload  = event_message["message"]["quick_reply"]["payload"]
-				print(texto)
-				if texto ==  "Hola":
+				payload  = event_message["message"]["quick_reply"]["payload"]
+				print(payload)
+				if payload ==  "Hola":
 					bot.saluda(sender_id)
 				elif texto == "Si":
 					bot.book(sender_id)
